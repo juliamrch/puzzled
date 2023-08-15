@@ -1,0 +1,44 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Puzzled'
+sectionPagesMenu = 'main'
+theme = 'puzzled'
+
+[permalinks]
+  deploy = "/:filename/"
+  administrate = "/:filename/"
+
+
+[params]
+  
+  homeText = "A modular Hugo theme"
+  logoURL =" "
+  logo = "/path/to/asset"
+
+
+[menu]
+
+# Sidebar
+  [[menu.main]]
+  identifier = 
+  name = 
+  pageRef = "//"
+  weight = 10
+
+  [[menu.main]]
+  identifier =
+  name = 
+  pageRef = "//"
+  weight = 20
+
+# Top Menu
+  [[menu.top]]
+  name = 
+  url = 
+
+
+  
+
+
+[taxonomies]
+  tag = "tags"
