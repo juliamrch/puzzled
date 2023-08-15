@@ -1,0 +1,10 @@
+<div class="navbar-end">
+    <div class="navbar-item">
+    
+    {{ range .Site.Menus.top }}
+    
+    <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </div>
+</div>
+</div>

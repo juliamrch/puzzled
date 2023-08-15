@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{ partial "head.html" . }}
+
+<div class="block"></div>
+
+<body class="is-family-sans-serif">
+  {{ partial "nav.html" . }}
+  <div class="container">
+    <div class="columns">
+        {{/* Sidebar menu */}}
+      <div class="column is-one-quarter-desktop">
+        {{ partial "sidebar.html" . }}
+      </div>
+      
+      {{/* Main content */}}
+      <div class="column is-three-quarters">
+        <main id="main">
+          <div class="content">
+          {{ block "main" . }}{{ end }}
+        </main>
+      </div>
+      </div>
+    </div>
+  </div>
+  {{ partial "script.html" . }}
+</body>
+</html>

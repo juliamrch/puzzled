@@ -1,0 +1,38 @@
+
+<aside class="menu" role="navigation" aria-label="main navigation">
+    <span class="burger" id="navToggle">
+        <i data-feather="menu"></i>
+    
+    </span>
+
+    <ul class="menu-list">
+        {{- range where .Site.RegularPages "Section" "" }}
+        {{ $icon := printf "<i data-feather=\"%s\"></i>" .Params.icon }}
+            {{ $text := print $icon " " .Title | safeHTML }}
+              <li><a class="navbar-item has-text-grey" href="{{ .RelPermalink }}">{{ $text }}</a></li>
+        {{- end }}
+    </ul>
+
+
+    {{- range site.Menus.main }}
+        <p class="menu-label">{{ .Name }}</p>
+        <ul class="menu-list">
+            {{ with site.GetPage "section" .Name }}
+                {{- range .Pages }}
+                {{ $icon := printf "<i data-feather=\"%s\"></i>" .Params.icon }}
+                {{ $text := print $icon " " .Title | safeHTML }}
+                  <li><a class="navbar-item has-text-grey" href="{{ .RelPermalink }}">{{ $text }}</a></li>
+            {{- end }}
+            
+            {{ else }}
+                {{ with site.GetPage "page" .PageRef }}
+                    <li><a class="has-text-grey" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    {{- end }}
+
+
+    
+
+</aside>

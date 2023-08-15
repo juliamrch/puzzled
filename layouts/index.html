@@ -1,0 +1,8 @@
+{{ define "main" }}
+          
+  <div class="container">
+    <h1 class="title">{{ .Title }}</h1>
+      <p class="subtitle">{{ .Site.Params.homeText | markdownify }}</p>
+    </div>
+
+    {{ end }}
